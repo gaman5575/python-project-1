@@ -53,9 +53,7 @@ pipeline {
 
                             echo "Building the Docker image"
                             docker build -t "${DOCKER_USERNAME}/python-project-1:\${new_version}" .
-
-                            
-
+                           
                             echo "Pushing the Docker image to Docker Hub"
                             docker login -u "${DOCKER_USERNAME}" -p "${DOCKER_PASSWORD}"
                             docker push "${DOCKER_USERNAME}/python-project-1:\${new_version}"
